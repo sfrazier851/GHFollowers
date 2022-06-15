@@ -14,7 +14,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        //UINavigationBar.appearance().prefersLargeTitles = true
         //UINavigationBar.appearance().backgroundColor = .systemGray6.withAlphaComponent(0.85)
         
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -56,6 +55,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func configureNavigationBar() {
+        UINavigationBar.appearance().prefersLargeTitles = true
         UINavigationBar.appearance().tintColor = .systemGreen
     }
     
