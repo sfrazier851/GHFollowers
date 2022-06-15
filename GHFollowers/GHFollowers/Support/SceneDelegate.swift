@@ -47,15 +47,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func createTabbar() -> UITabBarController {
         let tabbar = UITabBarController()
+        let appearance = UITabBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .secondarySystemBackground
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
         UITabBar.appearance().tintColor = .systemGreen
-        UITabBar.appearance().backgroundColor = .systemGray3
+        //UITabBar.appearance().backgroundColor = .systemGray3
         tabbar.viewControllers = [createSearchNC(), createFavoritesNC()]
         
         return tabbar
     }
     
     func configureNavigationBar() {
-        UINavigationBar.appearance().prefersLargeTitles = true
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .secondarySystemBackground
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
+        //UINavigationBar.appearance().prefersLargeTitles = true
         UINavigationBar.appearance().tintColor = .systemGreen
     }
     
