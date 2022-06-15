@@ -1,9 +1,10 @@
 //
-//  ErrorMessage.swift
+//  GFError.swift
 //  GHFollowers
 //
-//  Created by admin on 6/11/22.
+//  Created by admin on 6/15/22.
 //
+
 import Foundation
 
 enum GFError: String, Error {
