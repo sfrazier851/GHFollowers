@@ -14,6 +14,8 @@ class NetworkManager {
     let cache = NSCache<NSString, UIImage>()
     
     private let baseURL = "https://api.github.com/users/"
+    private let token = "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"
+    
     
     func getFollowers(for username: String, page: Int, completed: @escaping (Result<[Follower], GFError>) -> Void) {
         let endpoint = baseURL + "\(username)/followers?per_page=100&page=\(page)"
@@ -23,7 +25,10 @@ class NetworkManager {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        var urlRequest = URLRequest(url: url)
+        urlRequest.setValue("token \(token)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             if let _ = error {
                 completed(.failure(.unableToComplete))
                 return
