@@ -11,5 +11,15 @@ class FavoritesListVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        PersistenceManager.retrieveFavorites { [weak self] result in
+            switch result {
+            case .success(let favorites):
+                break
+            case .failure(let error):
+                break
+            }
+        }
     }
 }
